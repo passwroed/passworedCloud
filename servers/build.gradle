@@ -1,5 +1,6 @@
 subprojects {
     dependencies {
         implementation project(":commons:common-core")
+        implementation 'org.projectlombok:lombok:1.18.2'
     }
 }

@@ -1,6 +1,5 @@
-package cn.passwored;
+package cn.passwored.api.user;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -8,15 +7,13 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 /**
  * Project：passworedCloud
  * Description：
- * Date：2021-08-25 01:02
+ * Date：2021-08-25 01:50
  * Author wangke
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@Slf4j
-public class ServerGatewayApplication {
+public class ApiUserApplication {
     public static void main(String[] args) {
-        log.error("");
-        SpringApplication.run(ServerGatewayApplication.class, args);
+        SpringApplication.run(ApiUserApplication.class, args);
     }
 }

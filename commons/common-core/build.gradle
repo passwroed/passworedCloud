@@ -1,0 +1,4 @@
+dependencies {
+    implementation 'com.alibaba:fastjson:1.2.66'
+    implementation 'org.projectlombok:lombok:1.18.2'
+}

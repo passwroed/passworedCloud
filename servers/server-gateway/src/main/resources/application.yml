@@ -1,0 +1,39 @@
+spring:
+  profiles:
+#    active: test
+#    active: dev
+      active: produce
+  application:
+    # 应用名称
+    name: server-gateway
+
+  cloud:
+    # 路由网关配置
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 让gateway可以发现nacos中的微服务
+      routes:
+        - id: api-user
+          uri: lb://api-app
+          predicates:
+            - Path=/api/app/**
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  codec:
+    max-in-memory-size: 971554897
+
+server:
+  port: 10110
+
+# 用于nacos的健康检查
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+sm4:
+  key: 979270aba0bede50

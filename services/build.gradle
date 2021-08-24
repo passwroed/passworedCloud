@@ -1,0 +1,7 @@
+subprojects {
+    dependencies {
+        implementation project(":commons:common-core")
+        implementation project(":commons:common-data")
+        implementation project(":commons:common-dto")
+    }
+}

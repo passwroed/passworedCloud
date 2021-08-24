@@ -1,2 +1,7 @@
 rootProject.name = 'passworedCloud'
 
+include 'commons:common-core'
+include 'commons:common-data'
+include 'commons:common-dto'
+
+include 'servers:server-gateway'//网关

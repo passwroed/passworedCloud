@@ -4,9 +4,11 @@ dependencies {
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel'
     implementation 'com.alibaba.cloud:spring-cloud-starter-dubbo'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-seata'
+
 }
 
-apply plugin: "org.springframework.boot"
+apply plugin :"org.springframework.boot"
 
 group 'cn.passwored'
 version '0.1'
@@ -15,9 +17,9 @@ version '0.1'
  * 本地使用 -- 打包docker image
  */
 task dockerBuilder(type: Docker) {
-    applicationName = "api-user"
+    applicationName = "service-user"
     tagVersion = "${version}"
     addFile("build/libs/${applicationName}-${tagVersion}.jar", "target.jar")
     entryPoint(["java", "-Dspring.profiles.active=test", "-Djava.security.egd=file:/dev/./urandom","-Duser.timezone=Asia/Shanghai", "-jar", "target.jar"])
-    exposePort(10200)
+    exposePort(10300)
 }

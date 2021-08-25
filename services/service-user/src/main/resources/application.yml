@@ -1,0 +1,37 @@
+spring:
+  profiles:
+#    active: test
+#    active: dev
+    active: produce
+  application:
+    name: service-user
+
+
+server:
+  port: 10300
+
+# 用于nacos的健康检查
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# 用于mybatis检测
+mybatis:
+  mapper-locations: classpath*:mapper/**/*.xml
+
+#dubbo对内rpc通讯
+dubbo:
+  cloud:
+    subscribed-services: service-user
+  scan:
+    base-packages: cn.passwored.service.user.service.impl # 开启包扫描
+  protocols:
+    dubbo:
+      name: dubbo # 服务协议
+      port: -1 # 服务端口
+  registry:
+    #    address: spring-cloud://192.168.124.17 # 注册中心
+    port: 8848
+    address: spring-cloud://127.0.0.1 # 注册中心

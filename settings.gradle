@@ -7,3 +7,5 @@ include 'commons:common-dto'
 include 'servers:server-gateway'//网关
 
 include 'api:api-user'//用户
+
+include 'services:service-user'//用户

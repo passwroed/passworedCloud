@@ -5,7 +5,7 @@ spring:
         server-addr: 127.0.0.1:8848
     sentinel:
       transport:
-        port: 9150 #跟控制台交流的端口,随意指定一个未使用的端口即可
+        port: 10310 #跟控制台交流的端口,随意指定一个未使用的端口即可
         dashboard: 127.0.0.1:8858 # 指定控制台服务的地址
   datasource:
     url: jdbc:mysql://localhost:3306/passwored_user?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2b8
@@ -25,9 +25,9 @@ spring:
 #seata配置
 seata:
   enabled: true
-  application-id: service-supervision
+  application-id: service-user
   #这里的名字与file.conf中vgroup_mapping.my_test_tx_group = "default"相同
-  tx-service-group: default
+  tx-service-group: my_test_tx_group
   enable-auto-data-source-proxy: true
   #  use-jdk-proxy: false
   service:
@@ -45,7 +45,7 @@ seata:
       #这里的地址就是你的nacos的地址,可以更换为线上
       serverAddr: 127.0.0.1:8848
       #这里的名字就是registry.conf中 nacos的group名字
-      group: DEFAULT_GROUP
+      group: SEATA_GROUP
       userName: "nacos"
       password: "nacos"
   registry:
@@ -55,7 +55,7 @@ seata:
       #这里的地址就是你的nacos的地址,可以更换为线上
       server-addr: 127.0.0.1:8848
       #这里的名字就是registry.conf中 nacos的group名字
-      group: DEFAULT_GROUP
+      group: SEATA_GROUP
       namespace:
       userName: "nacos"
       password: "nacos"

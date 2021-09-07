@@ -16,7 +16,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @Slf4j
 public class ServerGatewayApplication {
     public static void main(String[] args) {
-        log.error("");
         SpringApplication.run(ServerGatewayApplication.class, args);
     }
 }
